@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NyKundeController">
+   <children>
+      <Button layoutX="531.0" layoutY="336.0" mnemonicParsing="false" onAction="#addKunde" text="Add" />
+       <Button layoutX="466.0" layoutY="336.0" mnemonicParsing="false" onAction="#changeScenButton" text="Back" />
+      <Label layoutX="153.0" layoutY="154.0" text="Kunde id" />
+      <Label layoutX="133.0" layoutY="189.0" text="Kunde Navn" />
+      <Label layoutX="115.0" layoutY="221.0" text="Kunde Adresse" />
+      <Label layoutX="129.0" layoutY="258.0" text="kunde telefon" />
+      <Label layoutX="133.0" layoutY="292.0" text="Billing konto" />
+      <TextField fx:id="kundeId" layoutX="219.0" layoutY="149.0" />
+      <TextField fx:id="kundeNavn" layoutX="219.0" layoutY="184.0" />
+      <TextField fx:id="kundeAdresse" layoutX="219.0" layoutY="216.0" />
+      <TextField fx:id="kundeTelefon" layoutX="219.0" layoutY="253.0" />
+      <TextField fx:id="billingKonto" layoutX="219.0" layoutY="287.0" />
+   </children>
+</AnchorPane>

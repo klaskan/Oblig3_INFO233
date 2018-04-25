@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.updateKundeController">
+
+    <children>
+        <Button layoutX="523.0" layoutY="341.0" mnemonicParsing="false" onAction="#changeScenButton" text="Back" />
+        <Label layoutX="110.0" layoutY="179.0" text="Kunde id" />
+        <Label layoutX="93.0" layoutY="215.0" text="Kunde navn" />
+        <Label layoutX="112.0" layoutY="251.0" text="Adresse" />
+        <TextField fx:id="kundeId" layoutX="180.0" layoutY="174.0" />
+        <TextField fx:id="kundeNavn" layoutX="180.0" layoutY="210.0" />
+        <TextField fx:id="adresse" layoutX="180.0" layoutY="246.0" />
+        <Label layoutX="60.0" layoutY="42.0" text="Oppdater kunde" />
+        <Button fx:id="kundeNavnKnapp" layoutX="359.0" layoutY="210.0" mnemonicParsing="false" onAction="#updateKundeNavn" text="Oppdater" />
+        <Button fx:id="adresseKnapp" layoutX="359.0" layoutY="246.0" mnemonicParsing="false" onAction="#updateKundeAdresse" text="Oppdater" />
+        <Label layoutX="239.0" layoutY="68.0" text="INFO: Skriv inn kunde id'en du ønsker å forandre på for " />
+        <Label layoutX="279.0" layoutY="85.0" text="derretter å legge inn informasjon du vil oppdatere." />
+        <Button fx:id="telefonNummerKnapp" layoutX="359.0" layoutY="288.0" mnemonicParsing="false" onAction="#updateKundeTelefon" text="Oppdater" />
+        <Label layoutX="68.0" layoutY="293.0" text="Telefon nummer" />
+        <Label layoutX="93.0" layoutY="333.0" text="Billing konto" />
+        <TextField fx:id="telefonNummer" layoutX="180.0" layoutY="288.0" />
+        <TextField fx:id="billingKonto" layoutX="180.0" layoutY="328.0" />
+        <Button fx:id="billingKontoKnapp" layoutX="359.0" layoutY="328.0" mnemonicParsing="false" onAction="#updateKundeBillingKonto" text="Oppdater" />
+        <TableView fx:id="tableview" layoutY="-2.0" onMouseClicked="#buildData" prefHeight="140.0" prefWidth="600.0" AnchorPane.bottomAnchor="262.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0" />
+    </children>
+
+</AnchorPane>

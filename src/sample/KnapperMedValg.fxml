@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.KnapperController">
+   <children>
+      <Button id="nyKunde" layoutX="32.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeScenButtonNyKude" text="Ny Kunde" />
+      <Button id="nyAdresse" layoutX="134.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeScenButtonNyAdresse" text="Ny adresse" />
+      <Button id="nyttProdukt" layoutX="241.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeScenButtonNyttProdukt" text="Nytt produkt" />
+      <Button id="nyKategori" layoutX="362.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeScenButtonNyKategori" text="Ny kategori" />
+      <Button id="nyFaktura" layoutX="474.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeScenButtonNyFaktura" text="Ny faktura" />
+      <Button fx:id="oppdaterKunde" layoutX="32.0" layoutY="244.0" mnemonicParsing="false" onAction="#changeScenButtonUpdateKunde" text="Oppdater Kunde" />
+      <Button fx:id="oppdaterAddresse" layoutX="224.0" layoutY="244.0" mnemonicParsing="false" onAction="#changeScenButtonUpdateAddress" text="Oppdater Adresse" />
+      <Button fx:id="oppdaterProdukt" layoutX="426.0" layoutY="244.0" mnemonicParsing="false" onAction="#changeScenButtonUpdateProdukt" text="Oppdater produkt" />
+      <Button fx:id="oppdaterKategori" layoutX="32.0" layoutY="305.0" mnemonicParsing="false" onAction="#changeScenButtonUpdateKategori" text="Oppdater kategori" />
+      <Button fx:id="oppdaterFaktura" layoutX="221.0" layoutY="305.0" mnemonicParsing="false" onAction="#changeScenButtonUpdateFaktura" text="Oppdater faktura" />
+
+      <ImageView fitHeight="153.0" fitWidth="150.0" layoutX="218.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../fxml/javafx.png" />
+         </image>
+      </ImageView>
+
+      <Button layoutX="426.0" layoutY="305.0" mnemonicParsing="false" onAction="#changeScenButtonMain" text="Vis fakturaer" />
+      <Button fx:id="blaIUlikeTyper" layoutX="227.0" layoutY="348.0" mnemonicParsing="false" onAction="#changeBlaIULikeTyperButton" text="Bla i ulike typer" />
+   </children>
+</AnchorPane>

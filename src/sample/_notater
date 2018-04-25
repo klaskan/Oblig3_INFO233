@@ -1,0 +1,158 @@
+DELOPPGAVE 6
+
+Designmaler skal representere den beste praksis på å løse problemer som programvare utviklere har møtt på når de har utviklet programvare. De er kommet frem til disse design malene ved prøving og feiling.
+Designmaler har to konkrete bruksområder i programvareutvikling:
+	* Den gir programvareutviklere en standard å følge, og er spesifikk til et bestemt senario som man møte på.
+	* Designmaler gir oss de beste svarene siden de er blitt utviklet over en så lang tidsperiode.
+
+De 23 ulike designmalene som er blitt utviklet er blitt klassifisert etter 3 ulike teorier:
+Konstruksjonemaler:
+objektene vi arbeider med er satt sammen og hvilken relasjoner som finnes mellom dem.
+
+strukturmaler:
+Disse design malene er opptatt av klasse og objekt komposisjoner. Konespter som
+
+Oppførselsmaler:
+Disse design malene er opptatt av hvordan objektene samarbeider om å få utført handlinger.
+
+
+*Ulike designmaler*
+
+Iterator malen:
+Denne designmaler er veldig vanlig i java. Denne design malen blir brukt for å få tilgang til elementene i en
+«collection» objekt uten å vite hvordan noe av den underliggende representasjonen av collection objektet er.
+Denne malen går under oppførselsmalen.
+Denne realiseres i java som grensesnitt Iterator<E>.
+Iterator malen åpner for at man kan bygge algoritmer som er uavhengig av den underliggende datastrukturen.
+
+Singeleton mal eller Singulær objekter:
+Detter er ev av de enkleste design malene i java. Den regnes som konstruksjonsmaler,
+dette er en av de beste malene for å lage et objekt. Denne malen gir en klasse i oppgave å lage
+1 objekt og sørger for at bare 1 objekt blir opprettet. Klassen gir oss en måte å få
+tilgang på klassens eneste objekt, som man kan få tilgang til direkte uten å instansiere objektet i klassen.
+
+Delegering mal:
+I objektorientert programmering hvor et objektet delegerer oppgavene til et assosiert hjelpeobjekt
+fremfor at oppgaven er definert som en egen metode. Dette fører til en invensjon av ansvar hvor et hjelpeobjekt,
+kjent som et delegat, gies ansvaret for den oppgaven den ble delegert.
+
+In the example below (using the Kotlin programming language), the class Window delegates the area() call to its internal Rectangle object (its delegate).
+
+
+```
+class Rectangle(val width: Int, val height: Int) {
+    fun area() = width * height
+}
+
+class Window(val bounds: Rectangle) {
+    // Delegation
+    fun area() = bounds.area()
+}
+```
+
+Abstrakt fabrikk:
+Fabrikker er en del av en applikasjon hvor man konstruerer mange konkrete objekter som er i samme «familie» av objekter.
+En klient klasse ber en fabrikk om ulike sorter objekter med et fastlagte grensesnitt. Fabrikken oppretter de
+faktiske objektene på forespørselen. Konkrete fabrikker implementerer alle samme grensesnitt.
+Ved programstart lager klienten den fabrikken som skal brukes under denne kjøringen.
+
+
+Facade mal
+Facade malen gjemmer kompleksitetene av systemet og gir heller et interface som klienten kan
+ta i bruk for å få tilgang til systemet. Dette er en form for strukturmal.
+
+Dekoratør mal
+Dekoratør malen lar brukeren legge til ny funksjonalitet til et eksisterende objekt uten å
+forandre på strukturen. Man legger til oppførselskomponenter utenpå andre komponenter.
+
+Observatør mal
+Er et objekt som holder styr på en liste av observatører. Brukes for en distribuert hendelseshåndtering.
+
+
+
+_SVAR_
+Her har jeg for det meste tatt i bruk observatør maler, har brukt dem i forbindelse med javaFx.
+Tror også jeg har tatt i bruk deligeringsmalen.
+Skal være helt ærlig og si at jeg ikke så på denne oppgaven før jeg hadde kommet godt ut i
+de andre oppgavene. (Skulle vært oppgave 1… ).  I tillegg har jeg tatt i bruk veldig mye fxml,
+og føler dette har stått litt i veien for meg nå jeg leser over disse ulike design malene.
+Har lagret en ny controller og fxml for hver av de ulike scene, hvor alt av knapper og det som har
+å gjøre med hvordan GUIet ser ut er lagt til i fxmlen. Kontrolleren styrer alt av metoder som blir
+kalt når knapper blir trykket på, dette har ført til veldig mye gjennbruk av kode, så jeg har ikke
+helt klart å holde koden min DRY.
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>''''''<!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!'''''`             ``'!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!''`          .....         `'!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!'`      .      :::::'            `'!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!'     .   '     .::::'                `!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!'      :          `````                   `!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!        .,cchcccccc,,.                       `!!!!!!!!!!!!
+!!!!!!!!!!!!!!!     .-"?$$$$$$$$$$$$$$c,                      `!!!!!!!!!!!
+!!!!!!!!!!!!!!    ,ccc$$$$$$$$$$$$$$$$$$$,                     `!!!!!!!!!!
+!!!!!!!!!!!!!    z$$$$$$$$$$$$$$$$$$$$$$$$;.                    `!!!!!!!!!
+!!!!!!!!!!!!    <$$$$$$$$$$$$$$$$$$$$$$$$$$:.                    `!!!!!!!!
+!!!!!!!!!!!     $$$$$$$$$$$$$$$$$$$$$$$$$$$h;:.                   !!!!!!!!
+!!!!!!!!!!'     $$$$$$$$$$$$$$$$$$$$$$$$$$$$$h;.                   !!!!!!!
+!!!!!!!!!'     <$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$                   !!!!!!!
+!!!!!!!!'      `$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F                   `!!!!!!
+!!!!!!!!        c$$$$???$$$$$$$P""  """??????"                      !!!!!!
+!!!!!!!         `"" .,.. "$$$$F    .,zcr                            !!!!!!
+!!!!!!!         .  dL    .?$$$   .,cc,      .,z$h.                  !!!!!!
+!!!!!!!!        <. $$c= <$d$$$   <$$$$=-=+"$$$$$$$                  !!!!!!
+!!!!!!!         d$$$hcccd$$$$$   d$$$hcccd$$$$$$$F                  `!!!!!
+!!!!!!         ,$$$$$$$$$$$$$$h d$$$$$$$$$$$$$$$$                   `!!!!!
+!!!!!          `$$$$$$$$$$$$$$$<$$$$$$$$$$$$$$$$'                    !!!!!
+!!!!!          `$$$$$$$$$$$$$$$$"$$$$$$$$$$$$$P>                     !!!!!
+!!!!!           ?$$$$$$$$$$$$??$c`$$$$$$$$$$$?>'                     `!!!!
+!!!!!           `?$$$$$$I7?""    ,$$$$$$$$$?>>'                       !!!!
+!!!!!.           <<?$$$$$$c.    ,d$$?$$$$$F>>''                       `!!!
+!!!!!!            <i?$P"??$$r--"?""  ,$$$$h;>''                       `!!!
+!!!!!!             $$$hccccccccc= cc$$$$$$$>>'                         !!!
+!!!!!              `?$$$$$$F""""  `"$$$$$>>>''                         `!!
+!!!!!                "?$$$$$cccccc$$$$??>>>>'                           !!
+!!!!>                  "$$$$$$$$$$$$$F>>>>''                            `!
+!!!!!                    "$$$$$$$$???>'''                                !
+!!!!!>                     `"""""                                        `
+!!!!!!;                       .                                          `
+!!!!!!!                       ?h.
+!!!!!!!!                       $$c,
+!!!!!!!!>                      ?$$$h.              .,c
+!!!!!!!!!                       $$$$$$$$$hc,.,,cc$$$$$
+!!!!!!!!!                  .,zcc$$$$$$$$$$$$$$$$$$$$$$
+!!!!!!!!!               .z$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+!!!!!!!!!             ,d$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$          .
+!!!!!!!!!           ,d$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$         !!
+!!!!!!!!!         ,d$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$        ,!'
+!!!!!!!!>        c$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$.       !'
+!!!!!!''       ,d$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$>       '
+!!!''         z$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$>
+!'           ,$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$>             ..
+            z$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'           ;!!!!''`
+            $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F       ,;;!'`'  .''
+           <$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$>    ,;'`'  ,;
+           `$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F   -'   ,;!!'
+            "?$$$$$$$$$$?$$$$$$$$$$$$$$$$$$$$$$$$$$F     .<!!!'''       <!
+         !>    ""??$$$?C3$$$$$$$$$$$$$$$$$$$$$$$$""     ;!'''          !!!
+       ;!!!!;,      `"''""????$$$$$$$$$$$$$$$$""   ,;-''               ',!
+      ;!!!!<!!!; .                `"""""""""""    `'                  ' '
+      !!!! ;!!! ;!!!!>;,;, ..                  ' .                   '  '
+     !!' ,;!!! ;'`!!!!!!!!;!!!!!;  .        >' .''                 ;
+    !!' ;!!'!';! !! !!!!!!!!!!!!!  '         -'
+   <!!  !! `!;! `!' !!!!!!!!!!<!       .
+   `!  ;!  ;!!! <' <!!!! `!!! <       /
+  `;   !>  <!! ;'  !!!!'  !!';!     ;'
+   !   !   !!! !   `!!!  ;!! !      '  '
+  ;   `!  `!! ,'    !'   ;!'
+      '   /`! !    <     !! <      '
+           / ;!        >;! ;>
+             !'       ; !! '
+          ' ;!        > ! '
+
+
+
